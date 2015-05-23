@@ -1,0 +1,22 @@
+﻿<div class="modal-header">
+    <h3>Select a {{type}}</h3>
+</div>
+<div class="modal-body">
+
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" ng-model="filter" class="form-control" />
+        </div>
+    </div>
+
+    <div ng-repeat="member in members | filter:filter">
+        <a href="" ng-click="member.select()"><h4 ng-class="{'bg-primary': member.isSelected}">{{member.Name}}</h4></a>
+    </div>
+
+    <button class="btn btn-success" ng-click="createNew()"><i class="glyphicon glyphicon-plus"></i> Create new {{type}}</button>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    </div>
+</div>

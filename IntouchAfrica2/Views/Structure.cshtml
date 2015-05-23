@@ -1,0 +1,45 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+<div class="container">
+
+    <h1>Create School Structure</h1>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Step 1</h2>
+            <p>Clear all data</p>
+            @using (Html.BeginUmbracoForm("ClearData", "StructureSurface"))
+            {
+                <input class="btn btn-primary" type="submit" value="Clear Data" />
+            }
+            <br/>
+            <br />
+
+            <h2>Step 2</h2>
+            <p>Upload School Structure</p>
+            <p><a href="~/content/school_structure.txt">Click here</a> for an example file. Please ensure that there are no blank lines at the end of the file</p>
+            @using (Html.BeginUmbracoForm("UploadStructure", "StructureSurface", null, new { enctype = "multipart/form-data" }, FormMethod.Post))
+            {
+                <input class="form-control" type="file" name="file" id="file"/>
+                <input class="btn btn-primary" type="submit" value="Upload Structure File"/>
+            }
+
+            <br />
+            <br />
+
+            <h2>Step 3</h2>
+            <p>Upload Members (Students, Teachers &amp; Parents)</p>
+            <p><a href="~/content/school_students_teachers_parents.txt">Click here</a> for an example file. Please ensure that there are no blank lines at the end of the file</p>
+            @using (Html.BeginUmbracoForm("UploadMembers", "StructureSurface", null, new { enctype = "multipart/form-data" }, FormMethod.Post))
+            {
+                <input class="form-control" type="file" name="file" id="file" />
+                <input class="btn btn-primary" type="submit" value="Upload Member File" />
+            }
+
+        </div>
+    </div>
+</div>

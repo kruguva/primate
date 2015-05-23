@@ -1,0 +1,83 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <abn-tree tree-data="structure" on-select="treehandler(branch)"></abn-tree>
+        </div>
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>LastLoginDate</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="member in members track by $index">
+                        <td>{{member.Name}}</td>
+                        <td>{{member.Email}}</td>
+                        <td>{{member.LastLoginDate | date}}</td>
+                        <td>{{member.Username}}</td>
+                        <td><a href="" ng-click="removeMember(member.Id)"><i class="glyphicon glyphicon-remove"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div ng-if="selectedLevelType !== 'Leaf'">
+                <button class="btn btn-default" ng-click="addLevel()">Add Level</button>
+                <button class="btn btn-default" ng-click="addClass()">Add Class</button>
+                <button class="btn btn-default" ng-click="addStaff()">Add Staff/Teacher</button>
+            </div>
+
+            <div ng-if="selectedLevelType === 'Leaf'">
+                <button class="btn btn-default" ng-click="enrolMember()">Enroll Student</button>
+                <button class="btn btn-default" ng-click="addStaff()">Add Staff/Teacher</button>
+            </div>
+
+            <div class="pull-right">
+                <button class="btn btn-default" ng-click="deleteGroup()">Delete {{selectedLevelType === 'Leaf' ? 'Class' : 'Level'}}</button>
+                <div ng-if="requestConfirmDelete">
+                    Are you sure? <a href="" ng-click="confirmDelete()">YES</a> | <a href="cancelDelete()">NO</a>
+                </div>
+            </div>
+
+            <form ng-if="addingLevel" ng-submit="submitLevel()">
+                <input type="text" ng-model="$parent.levelName" class="form-control" placeholder="Level Name..."/>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+    <br/><br/><br/>
+
+    <div class="row">
+
+        <div class="btn-group" dropdown is-open="status.createisopen">
+            <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="false">
+                Create Member <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#/member/create/teacher">Teacher</a></li>
+                <li><a href="#/member/create/student">Student</a></li>
+                <li><a href="#/member/create/parent">Parent</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group" dropdown is-open="status.viewisopen">
+            <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="false">
+                View Member <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#/members/teacher">Teacher</a></li>
+                <li><a href="#/members/student">Student</a></li>
+                <li><a href="#/members/parent">Parent</a></li>
+            </ul>
+        </div>
+       
+    </div>
+    
+</div>
+
+

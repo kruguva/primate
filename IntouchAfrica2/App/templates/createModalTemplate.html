@@ -1,0 +1,18 @@
+﻿<div class="modal-header">
+    <h3>Create a new {{type}}</h3>
+</div>
+
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal" name="createForm">
+                <intouch-editor ng-repeat="property in properties" property-info="property" />
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="save()" ng-disabled="!createForm.$valid">Save</button>
+    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+</div>
+

@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@using System.Web.Mvc.Html
+@using ClientDependency.Core.Mvc
+@using Umbraco.Web
+@using Umbraco.Web.Models
+@using Umbraco.Web.Controllers
+
+@{
+    var loginStatusModel = Members.GetCurrentLoginStatus();
+}
+
+@if (loginStatusModel.IsLoggedIn)
+{
+	
+	<ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" dropdown>
+			
+          <a class="dropdown-toggle" dropdown-toggle>@loginStatusModel.Name <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>	
+                <a href="" ng-click="logout()">Log Out</a>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+		
+}

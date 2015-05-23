@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "PublicMaster.cshtml";
+}
+
+<div class="container">
+	
+	<h2>Gallery</h2>
+	@Umbraco.RenderMacro("Galleries", new {mediaId="2258"})
+	
+</div>

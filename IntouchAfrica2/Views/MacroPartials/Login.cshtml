@@ -1,0 +1,75 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@using System.Web.Mvc.Html
+@using ClientDependency.Core.Mvc
+@using Umbraco.Web
+@using Umbraco.Web.Models
+@using Umbraco.Web.Controllers
+
+
+@{
+    var loginNodeID = 1229; //NB: SET THIS IF MOVING THIS PAGE
+    var loginModel = new LoginModel();
+    var loginStatusModel = Members.GetCurrentLoginStatus();
+
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    Html.RequiresJs("/umbraco_client/ui/jquery.js");
+    Html.RequiresJs("/umbraco_client/Application/JQuery/jquery.validate.min.js");
+    Html.RequiresJs("/umbraco_client/Application/JQuery/jquery.validate.unobtrusive.min.js");
+}
+
+@{
+    var checkUrl = HttpContext.Current.Request.Url.AbsolutePath.ToString();
+
+    // add a trailing / if there isn't one (you can access http://mydomain.com/login or http://mydomain.com/login/
+    if (@checkUrl[checkUrl.Length - 1] != '/')
+    {
+        checkUrl = checkUrl + "/";
+    }
+
+    if (HttpContext.Current.Request.Url != null && HttpContext.Current.Request.Url.AbsolutePath.ToString() != "/umbraco/RenderMvc" && HttpContext.Current.Session["redirectURL"] == null)
+    {
+        if (checkUrl != @Umbraco.Content(loginNodeID).Url)
+        {
+            HttpContext.Current.Session["redirectURL"] = HttpContext.Current.Request.Url.ToString();
+        }
+    }
+
+    if (loginStatusModel.IsLoggedIn)
+    {
+        var redirectUrl = (string)HttpContext.Current.Session["redirectURL"];
+
+        var currentUrl = HttpContext.Current.Request.Url.ToString();
+        if (HttpContext.Current.Session["redirectURL"] != null)
+        {
+            // clear the session variable for future logins
+            HttpContext.Current.Session["redirectURL"] = null;
+            HttpContext.Current.Response.Redirect(redirectUrl);
+        }
+        else
+        {
+            // Nothing in the session so we will go home
+            HttpContext.Current.Response.Redirect("/");
+        }
+    }
+}
+
+@using (Html.BeginUmbracoForm<UmbLoginController>("HandleLogin", null, new { role = "form" }, FormMethod.Post))
+{
+
+    @Html.ValidationSummary("loginModel", true)
+    <div class="form-group">
+        @Html.LabelFor(m => loginModel.Username)
+        @Html.TextBoxFor(m => loginModel.Username, new { @class = "form-control", placeholder = "Username" })
+        @Html.ValidationMessageFor(m => loginModel.Username)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => loginModel.Password)
+        @Html.PasswordFor(m => loginModel.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => loginModel.Password)
+    </div>
+
+    <input type="submit" value="Login" class="btn btn-primary" />
+}
+

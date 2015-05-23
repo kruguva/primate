@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @foreach (var role in Roles.GetAllRoles())
+        {
+            <h3>@role</h3>
+            foreach (var user in Roles.GetUsersInRole(role))
+            {
+                <p>@user</p>
+            }
+        }
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+﻿<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{type}}
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" ng-model="filter"/>
+                </div>
+            </div>
+            
+            <div ng-repeat="member in members | filter:filter">
+                <h3><a href="#/member/{{member.Id}}">{{member.Name}}</a></h3>
+            </div>
+        </div>
+    </div>
+</div>

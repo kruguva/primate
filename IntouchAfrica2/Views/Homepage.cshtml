@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "PublicMaster.cshtml";
+}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>@Umbraco.Field("pageTitle")</h1>
+        <p>Welcome to Joe's Primary</p>
+        <p><a class="btn btn-primary btn-lg" role="button" href="/App">Go To App &raquo;</a></p>
+    </div>
+</div>
+		
+<div class="container">
+
+	@Umbraco.Field("bodyText")
+	
+</div>
+      

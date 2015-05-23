@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+
+	@* OrderBy() takes the property to sort by and optionally order desc/asc *@
+	
+    @foreach (var page in CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc"))
+    { 
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">@page.Title</h3>
+			</div>
+			<div class="panel-body">
+				@Umbraco.Truncate(@page.Contents,30) <a href="@page.Url">Read More..</a>
+			</div>
+		</div>
+    }

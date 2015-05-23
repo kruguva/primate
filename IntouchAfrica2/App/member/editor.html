@@ -1,0 +1,22 @@
+﻿<div class="form-group">
+    <label for="{{propertyInfo.Name}}" class="col-md-2 control-label">{{propertyInfo.Prompt}}</label>
+    <div class="col-md-10" ng-switch="propertyInfo.Type">
+        <input type="text" class="form-control" id="{{propertyInfo.Name}}" placeholder="{{propertyInfo.Prompt}}" ng-switch-when="Umbraco.Textbox" ng-model="propertyInfo.value" ng-required="propertyInfo.isMandatory">
+        <input type="text" class="form-control" id="{{propertyInfo.Name}}" placeholder="{{propertyInfo.Prompt}}" ng-switch-when="Umbraco.Password" ng-model="propertyInfo.value" ng-required="propertyInfo.isMandatory">
+        <input type="date" class="form-control" id="{{propertyInfo.Name}}" placeholder="{{propertyInfo.Prompt}}" ng-switch-when="Umbraco.Date" ng-model="propertyInfo.value" ng-required="propertyInfo.isMandatory">
+        <div ng-switch-when="Umbraco.RadioButtonList">
+            <label class="radio-inline" ng-repeat="value in propertyInfo.AvailableValues">
+                <input type="radio" name="{{propertyInfo.Name + ':' + value}}" id="{{propertyInfo.Name + ':' + value}}" ng-value="value" ng-model="propertyInfo.value" ng-required="propertyInfo.isMandatory">{{value}}
+            </label>
+        </div>
+        <select class="form-control" ng-switch-when="Umbraco.DropDown" ng-model="propertyInfo.value">
+            <option ng-repeat="value in propertyInfo.AvailableValues" ng-required="propertyInfo.isMandatory">{{value}}</option>
+        </select>
+        <div class="input-group" ng-switch-when="Umbraco.MemberPicker">
+            <input type="text" class="form-control" placeholder="{{propertyInfo.Prompt}}" ng-model="propertyInfo.value.Name" ng-required="propertyInfo.isMandatory" ng-disabled="true" id="{{propertyInfo.Name}}">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="selectMember(propertyInfo)">Select...</button>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿<h2>{{studentInfo.studentName}}</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+            <th>{{studentInfo.startDate | date:'dd-MMM'}}<br />Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>{{studentInfo.endDate | date:'dd-MMM'}}<br />Friday</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td ng-repeat="attendance in studentInfo.attendanceSummaries">
+                        <a href="" ng-show="attendance.Present > 0 || attendance.Absent > 0">
+                            <p class="text-success" ng-show="attendance.Present > 0">Present</p>
+                            <p class="text-danger" ng-show="attendance.Absent > 0">Absent</p>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row" ng-if="studentInfo.absenteeDates && studentInfo.absenteeDates.length > 0">
+    <div class="col-md-12">
+        <h4>Absenteeism - Year to Date</h4>
+        <div ng-repeat="date in studentInfo.absenteeDates">
+            <p>{{date | date:'dd MMMM'}}</p>
+        </div>
+    </div>
+</div>

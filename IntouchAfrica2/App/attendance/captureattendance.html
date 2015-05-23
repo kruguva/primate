@@ -1,0 +1,46 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Capturing Attendance for </h2>
+            <select id="classSelect" ng-model="selectedGroup" ng-options="grp.Name group by grp.ParentGroupName for grp in groups" ng-change="groupSelected()">
+                <option value="">-- Choose Class --</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>On <input type="date" class="form-control" ng-model="date"></h3>
+        </div>
+    </div>
+
+    <div class="row" ng-show="attendanceCaptured">
+        <h2>Captured by {{capturedBy}} - {{captureTime | date:'medium'}}</h2>
+    </div>
+
+    <div class="row">
+        <table class="table">
+            <thead>
+                <th>Present/Absent</th>
+                <th>Student</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="member in members">
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" ng-model="member.status" btn-radio="'present'" ng-class="member.status === 'present' ? 'btn-success' : 'btn-default'" ng-disabled="attendanceCaptured"><i class="glyphicon glyphicon-ok"></i></button>
+                            <button type="button" class="btn btn-default" ng-model="member.status" btn-radio="'absent'" ng-class="member.status === 'absent' ? 'btn-danger' : 'btn-default'" ng-disabled="attendanceCaptured"><i class="glyphicon glyphicon-remove"></i></button>
+                        </div>
+                    </td>
+                    <td>{{member.Name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-primary" ng-disabled="!canSubmit" ng-click="submit()" ng-hide="attendanceCaptured">Submit</button>
+        </div>
+    </div>
+</div>

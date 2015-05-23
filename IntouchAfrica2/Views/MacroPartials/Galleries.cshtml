@@ -1,0 +1,60 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+
+@*
+Macro to display a gallery from a media folder. Add the below parameter to the macro
+and use it to point the macro at a specific media folder to display it's content as
+a simple list.
+
+Macro Parameters To Create, for this macro to work:
+Alias:mediaId     Name:Media Folder ID    Type:Single Media Picker
+*@
+
+@if (Model.MacroParameters["mediaId"] != null)
+{
+    @* Get the media folder as a dynamic node *@
+    var mediaFolder = Umbraco.Media(Model.MacroParameters["mediaId"]);
+
+    if (mediaFolder.Children.Any())
+    {
+        <ul class="row">
+            @* for each item in children of the selected media folder *@
+            @foreach (var mediaItem in mediaFolder.Children)
+            {
+                <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+					
+                    	<a href="@mediaItem.umbracoFile" class="thumbnail">
+                        	<img src="@mediaItem.umbracoFile" alt="@mediaItem.Name" />
+                    	</a>
+					
+                </li>
+            }
+        </ul>
+    }
+}
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">         
+          <div class="modal-body">                
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+			  
+<script type="text/javascript">
+ $(document).ready(function(){
+           $('li img').on('click',function(){
+                var src = $(this).attr('src');
+                var img = '<img src="' + src + '" class="img-responsive"/>';
+                $('#myModal').modal();
+                $('#myModal').on('shown.bs.modal', function(){
+                    $('#myModal .modal-body').html(img);
+                });
+                $('#myModal').on('hidden.bs.modal', function(){
+                    $('#myModal .modal-body').html('');
+                });
+           });  
+        });
+			  
+</script>

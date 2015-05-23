@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "PublicMaster.cshtml";
+}
+
+<div class="container">
+	
+	<div class="row">
+ 		<div class="col-md-12">
+          	<h1>@Umbraco.Field("newsTitle")</h1>
+			<p>@Umbraco.Field("newsBodyText")</p>
+        </div>		
+    </div>
+			
+	<div class="row">
+		<div class="col-md-12">
+			@Umbraco.RenderMacro("ListNews")
+		</div>
+	</div>
+
+</div>
