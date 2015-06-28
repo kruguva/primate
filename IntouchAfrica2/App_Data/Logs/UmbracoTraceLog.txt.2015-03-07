@@ -1,0 +1,65 @@
+﻿2015-03-07 16:37:26,555 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2015-03-07 16:37:26,566 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 8ms)
+2015-03-07 16:37:26,576 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2015-03-07 16:37:26,842 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 35 (took 266ms)
+2015-03-07 16:37:26,897 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2015-03-07 16:37:26,903 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 5ms)
+2015-03-07 16:37:26,903 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2015-03-07 16:37:26,911 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 8ms)
+2015-03-07 16:37:26,928 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2015-03-07 16:37:26,934 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 5 (took 6ms)
+2015-03-07 16:37:26,935 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2015-03-07 16:37:26,944 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 33 (took 9ms)
+2015-03-07 16:37:26,949 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2015-03-07 16:37:26,955 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 6ms)
+2015-03-07 16:37:26,956 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2015-03-07 16:37:26,978 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 21ms)
+2015-03-07 16:37:27,591 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Trees.TreeController
+2015-03-07 16:37:27,600 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 9ms)
+2015-03-07 16:37:27,618 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.ITree
+2015-03-07 16:37:27,629 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 10ms)
+2015-03-07 16:37:27,666 [6] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2015-03-07 16:37:27,992 [6] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2015-03-07 16:37:28,200 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplication
+2015-03-07 16:37:28,210 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 10ms)
+2015-03-07 16:37:29,293 [6] INFO  umbraco.content - [Thread 9] Loading content from disk cache...
+2015-03-07 16:37:29,377 [6] INFO  Umbraco.Core.PluginManager - [Thread 9] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2015-03-07 16:37:29,384 [6] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 22 (took 7ms)
+2015-03-07 16:37:29,605 [6] INFO  Umbraco.Core.PluginManager - [Thread 9] Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+2015-03-07 16:37:29,623 [6] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 43 (took 17ms)
+2015-03-07 16:38:23,590 [6] INFO  Umbraco.Core.PluginManager - [Thread 12] Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
+2015-03-07 16:38:23,598 [6] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 7ms)
+2015-03-07 16:38:37,047 [6] INFO  Umbraco.Web.Mvc.UmbracoPageResult - [Thread 13] Executing Umbraco RouteDefinition controller
+2015-03-07 16:38:37,057 [6] INFO  Umbraco.Web.Mvc.UmbracoPageResult - [Thread 13] Finished (took 10ms)
+2015-03-07 16:38:56,111 [6] INFO  Umbraco.Web.Mvc.UmbracoPageResult - [Thread 13] Executing Umbraco RouteDefinition controller
+2015-03-07 16:38:56,116 [6] INFO  Umbraco.Web.Mvc.UmbracoPageResult - [Thread 13] Finished (took 4ms)
+2015-03-07 16:39:06,368 [6] WARN  Umbraco.Core.Models.Member - [Thread 13] Trying to access the 'PasswordQuestion' property on Umbraco.Core.Models.Member but the umbracoMemberPasswordRetrievalQuestion property does not exist on the member type so a default value is returned. Ensure that you have a property type with alias: umbracoMemberPasswordRetrievalQuestion configured on your member type in order to use the 'PasswordQuestion' property on the model correctly.
+2015-03-07 16:39:06,495 [6] WARN  Umbraco.Core.Models.Member - [Thread 13] Trying to access the 'PasswordQuestion' property on Umbraco.Core.Models.Member but the umbracoMemberPasswordRetrievalQuestion property does not exist on the member type so a default value is returned. Ensure that you have a property type with alias: umbracoMemberPasswordRetrievalQuestion configured on your member type in order to use the 'PasswordQuestion' property on the model correctly.
+2015-03-07 16:39:06,539 [6] WARN  Umbraco.Core.Models.Member - [Thread 13] Trying to access the 'PasswordQuestion' property on Umbraco.Core.Models.Member but the umbracoMemberPasswordRetrievalQuestion property does not exist on the member type so a default value is returned. Ensure that you have a property type with alias: umbracoMemberPasswordRetrievalQuestion configured on your member type in order to use the 'PasswordQuestion' property on the model correctly.
+2015-03-07 16:39:07,468 [6] WARN  Umbraco.Core.Models.Member - [Thread 13] Trying to access the 'PasswordQuestion' property on Umbraco.Core.Models.Member but the umbracoMemberPasswordRetrievalQuestion property does not exist on the member type so a default value is returned. Ensure that you have a property type with alias: umbracoMemberPasswordRetrievalQuestion configured on your member type in order to use the 'PasswordQuestion' property on the model correctly.
+2015-03-07 16:39:10,512 [6] WARN  Umbraco.Core.Models.Member - [Thread 13] Trying to access the 'PasswordQuestion' property on Umbraco.Core.Models.Member but the umbracoMemberPasswordRetrievalQuestion property does not exist on the member type so a default value is returned. Ensure that you have a property type with alias: umbracoMemberPasswordRetrievalQuestion configured on your member type in order to use the 'PasswordQuestion' property on the model correctly.
+2015-03-07 16:39:26,566 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of umbraco.interfaces.IDataType
+2015-03-07 16:39:26,597 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 36ms)
+2015-03-07 16:39:26,612 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Starting resolution types of umbraco.interfaces.ITree
+2015-03-07 16:39:26,612 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.interfaces.ITree, found 35 (took 8ms)
+2015-03-07 16:39:34,847 [6] INFO  Umbraco.Core.Persistence.UmbracoDatabase - [Thread 7]    at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Umbraco.Core.Persistence.Database.ExecuteScalar[T](String sql, Object[] args)
+2015-03-07 16:39:52,710 [6] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 7] Error executing query insert into cmsDataTypePreValues (datatypenodeid,[value],sortorder,alias) values (@dtdefid,@value,0,'')
+SqlCE4Umbraco.SqlCeProviderException: Error running NonQuery: 
+SQL Statement:
+insert into cmsDataTypePreValues (datatypenodeid,[value],sortorder,alias) values (@dtdefid,@value,0,'')
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): A foreign key value cannot be inserted because a corresponding primary key value does not exist. [ Foreign key constraint name = FK_cmsDataTypePreValues_cmsDataType_nodeId ]
+   at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommandText(IntPtr& pCursor, Boolean& isBaseTableCursor)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteNonQuery(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+2015-03-07 16:40:22,076 [6] INFO  Umbraco.Core.Persistence.UmbracoDatabase - [Thread 7]    at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Umbraco.Core.Persistence.Database.ExecuteScalar[T](String sql, Object[] args)

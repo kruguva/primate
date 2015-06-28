@@ -15,3 +15,7 @@
 			</div>
 		</div>
     }
+
+@if (Members.IsLoggedIn() && Members.GetCurrentMember().ContentType.Alias == "Teacher") { 
+    <a href="" class="btn btn-primary">Create News Item</a>
+}
